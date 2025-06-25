@@ -94,15 +94,15 @@ export default function () {
       </div>
       <TextAnimation currentText={currentText} isAudioPlaying={conversation.isSpeaking} onStopListening={handleStopListening} onStartListening={handleStartListening} />
       {messages.length > 0 && (
-        <button className="text-sm fixed top-2 right-4 underline" onClick={() => setIsTranscriptOpen(!isTranscriptOpen)}>
-          Show Transcript
+        <button className="text-sm fixed top-2 right-4 mr-8 text-[#0066ff]" onClick={() => setIsTranscriptOpen(!isTranscriptOpen)}>
+          Transcrição
         </button>
       )}
       {isTranscriptOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white text-black p-4 rounded shadow-lg max-w-[90%] max-h-[90%] overflow-y-scroll">
+          <div className="bg-white text-black p-4 rounded-xl shadow-lg max-w-[90%] max-h-[90%] overflow-y-scroll">
             <div className="flex flex-row items-center justify-between">
-              <span>Transcript</span>
+              <span className='text-black'>Transcrição</span>
               <button onClick={() => setIsTranscriptOpen(false)}>
                 <X />
               </button>
