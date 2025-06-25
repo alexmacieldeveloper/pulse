@@ -3,9 +3,8 @@
 @tailwind utilities;
 
 .logo-mask-voe-asas {
-  width: 180px;
-  height: 63px;
-  background-color: #0066ff;
+  @apply w-[180px] h-[63px] bg-[#0066ff];
+
   -webkit-mask-image: url('/images/logos_odontoprev_voeasas.png');
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
@@ -15,6 +14,13 @@
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
+}
+
+@media (min-width: 1024px) {
+  .logo-mask-voe-asas {
+    width: 220px;   /* maior largura */
+    height: 80px;   /* maior altura */
+  }
 }
 
 
