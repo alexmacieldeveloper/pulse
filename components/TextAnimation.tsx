@@ -16,7 +16,7 @@ interface Props {
 export default function AiTalkingAnimation({ onStartListening, onStopListening, isAudioPlaying, currentText }: Props) {
   const [aiState, setAiState] = useState<AIState>('idle')
   const animatedCurrentText = useTypingEffect(currentText, 20)
-  const displayedText = useTypingEffect('Eu sou a Camila, sua assistente do HackaDonto! Com o que eu posso te ajudar?', 20)
+  const displayedText = useTypingEffect('Como que posso te ajudar? Clique no botão acima para iniciarmos nossa conversa.', 20)
 
   const handleCircleClick = () => {
     if (aiState === 'listening' || aiState === 'speaking') {
@@ -34,16 +34,10 @@ export default function AiTalkingAnimation({ onStartListening, onStopListening, 
   }, [isAudioPlaying])
 
   return (
-    <div   style={{
-    backgroundImage: "linear-gradient(to bottom, #002041, #34005B), url('/images/selo_hackadonto.png')",
-    backgroundSize: 'contain',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    backgroundBlendMode: 'screen',
-  }} className="flex flex-col items-center justify-center min-h-screen p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-[#e5e7eb]">
       <div className="relative mb-8 cursor-pointer" onClick={handleCircleClick} role="button" aria-label={aiState === 'listening' ? 'Stop listening' : 'Start listening'}>
         <motion.div
-          className="w-20 h-20 bg-gradient-to-b from-[#002041] to-[#34005B] rounded-full flex items-center justify-center shadow-lg"
+          className="w-20 h-20 bg-[#0066ff] rounded-full flex items-center justify-center shadow-lg"
           animate={aiState === 'idle' ? { scale: [1, 1.1, 1] } : aiState === 'speaking' ? { scale: [1, 1.2, 0.8, 1.2, 1] } : {}}
           transition={{
             repeat: Infinity,
@@ -59,7 +53,7 @@ export default function AiTalkingAnimation({ onStartListening, onStopListening, 
               r="48"
               fill="none"
               strokeWidth="4"
-              stroke="#8B5CF6"
+              stroke="#0066ff"
               transition={{
                 duration: 10,
                 ease: 'linear',
@@ -86,7 +80,7 @@ export default function AiTalkingAnimation({ onStartListening, onStopListening, 
               repeat: Infinity,
               ease: 'easeInOut',
             }}
-            className="h-5 w-2 mt-2 bg-gradient-to-b from-[#002041] to-[#34005B]"
+            className="h-5 w-2 mt-2 bg-[#0066ff]"
           />
         )}
       </div>
