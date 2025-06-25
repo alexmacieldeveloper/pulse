@@ -13,6 +13,7 @@ export default function () {
   const [currentText, setCurrentText] = useState('')
   const [messages, setMessages] = useState<any[]>([])
   const [isTranscriptOpen, setIsTranscriptOpen] = useState(false)
+
   const loadConversation = () => {
     fetch(`/api/c?id=${slug}`)
       .then((res) => res.json())
@@ -84,12 +85,9 @@ export default function () {
   }, [slug])
   return (
     <>
-      <div className="fixed top-2 left-2 flex flex-row gap-x-2 items-center">
-        <a href="https://odontoprev.aceleradoravoe.com/" target="_blank">
-          <img loading="lazy" decoding="async" src="/images/logo-odontoprev.png" width="158" height="48" className="h-[41px] w-auto" alt="OdontoPrev Logo" />
-        </a>
-        <a href="https://voesemasas.com.br/" target='_blank'>
-          <img loading='lazy' decoding='async' src='/images/logo-voe-sem-asas.png' width="158" height="48" className="h-[30px] w-auto" alt='Voe Sem Asas Logo' />
+      <div className="fixed top-2 left-2 flex flex-row gap-x-2 items-center md:ml-8">
+        <a href="https://voesemasas.com.br/" target="_blank" rel="noopener noreferrer">
+          <div className="logo-mask-voe-asas" />
         </a>
       </div>
       <TextAnimation currentText={currentText} isAudioPlaying={conversation.isSpeaking} onStopListening={handleStopListening} onStartListening={handleStartListening} />

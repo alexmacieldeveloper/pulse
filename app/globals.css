@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.logo-mask-voe-asas {
+  width: 180px;
+  height: 63px;
+  background-color: #0066ff;
+  -webkit-mask-image: url('/images/logos_odontoprev_voeasas.png');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+
+  mask-image: url('/images/logos_odontoprev_voeasas.png');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+
