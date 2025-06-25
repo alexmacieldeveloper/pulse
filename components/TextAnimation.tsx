@@ -16,7 +16,7 @@ interface Props {
 export default function AiTalkingAnimation({ onStartListening, onStopListening, isAudioPlaying, currentText }: Props) {
   const [aiState, setAiState] = useState<AIState>('idle')
   const animatedCurrentText = useTypingEffect(currentText, 20)
-  const displayedText = useTypingEffect('Como que posso te ajudar? Clique no botão acima para iniciarmos nossa conversa.', 20)
+  const displayedText = useTypingEffect('Clique no botão acima e faça sua pergunta em áudio para iniciarmos nossa conversa.', 20)
 
   const handleCircleClick = () => {
     if (aiState === 'listening' || aiState === 'speaking') {
