@@ -92,7 +92,7 @@ export default function () {
       </div>
       <TextAnimation currentText={currentText} isAudioPlaying={conversation.isSpeaking} onStopListening={handleStopListening} onStartListening={handleStartListening} />
       {messages.length > 0 && (
-        <button className="text-sm fixed top-2 right-4 mr-8 text-[#0066ff]" onClick={() => setIsTranscriptOpen(!isTranscriptOpen)}>
+        <button className="text-sm md:text-lg fixed top-2 right-4 text-[#0066ff] mt-6 md:mr-8" onClick={() => setIsTranscriptOpen(!isTranscriptOpen)}>
           Transcrição
         </button>
       )}
